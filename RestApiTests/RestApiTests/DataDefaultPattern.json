@@ -1,0 +1,18 @@
+﻿{
+  "design_url": "/content/images/MasterCard_Gold_EMV_PayPass_ЕжикСобака.png",
+  "transactions_total_amount": 0,
+  "tariff_avg_month_balance": 472465,
+  "type": 1,
+  "closing_date": "2019-10-31T00:00:00",
+  "partial_withdraw_available": 1,
+  "refill_available": 1,
+  "blocked_amount": -1000.0,
+  "scheme_id": "xint",
+  "pan": "5449***1331",
+  "account_id": 12345678,
+  "title_small": "MasterCard1331",
+  "title": "Master1",
+  "balance": 1000.0,
+  "currency": "RUR",
+  "isSalary": false
+}
