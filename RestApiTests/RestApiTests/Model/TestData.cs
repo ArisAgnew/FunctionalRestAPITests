@@ -19,7 +19,7 @@ namespace RestApiTests.Model
             var uri = new Dictionary<string, object>
             {
                 {"correctAccountsPath", "apitest/accounts" },
-                {"correctSingleAccountsPath", "apitest/accounts/12345678" },
+                {"correctSingleAccountsPath", "apitest/accounts/12345679" },
                 {"correctPathWithQuery", "apitest/accounts/12345678/?rename=name"}, //200 OK
                 {"Path?1", "?apitest/accounts/12345678"}, //200 OK Error
                 {"Path?2", "apitest/accounts/12345678?"}, //200 OK Completed
@@ -52,6 +52,8 @@ namespace RestApiTests.Model
                 {"doubleValue", 4.94065645841247E+7D },
                 {"zeroHex", 0x0000000000000000},
                 {"uint64MaxValueHex", 0xffffffffffffffff},
+                {"secondAccount",12345679},
+                {"secondPan","5449***1332" }
             };
             return values;
         }
