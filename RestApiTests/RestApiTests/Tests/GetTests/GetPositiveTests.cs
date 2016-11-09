@@ -4,6 +4,7 @@ using System.Net;
 using NUnit.Framework;
 using RestApiTests.Model;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace RestApiTests.Tests.GetTests
 {
@@ -18,7 +19,7 @@ namespace RestApiTests.Tests.GetTests
             var request = new RestRequest(td.GetResourcePath()["correctSingleAccountsPath"], Method.GET);
 
             IRestResponse<Data> response = client.Execute<Data>(request);
-
+                        
             Assert.AreEqual(
                 "/content/images/MasterCard_Gold_EMV_PayPass_ЕжикСобака.png",
                 response.Data.Design_Url);
@@ -113,12 +114,14 @@ namespace RestApiTests.Tests.GetTests
             var request = new RestRequest(td.GetResourcePath()["correctAccountsPath"], Method.GET);
 
             //data is Array !!!
-            IRestResponse<System.Collections.Generic.List<Data>> response = client.Execute<System.Collections.Generic.List<Data>>(request);
+            IRestResponse<List<Data>> response = client.Execute<List<Data>>(request);
             //you should check at least length
             Assert.Greater(response.Data.Count, 0);
             //find an account in the response
             int accountNum = (int)(td.GetValue()["secondAccount"]);
             var found = response.Data.Where(d => d.Account_Id == 29292929).FirstOrDefault();
+            Console.WriteLine(accountNum);
+            Console.WriteLine(found);
             Assert.IsNotNull(found);
             Assert.IsNotEmpty(response.Content);
             Assert.AreEqual(200, response.StatusCode.GetHashCode());
